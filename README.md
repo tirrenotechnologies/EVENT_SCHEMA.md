@@ -1,6 +1,6 @@
 # tirreno event schema
 
-This schema holds everything tirreno learns from the events of entities (or users) in your application. Your app reports what each entity does, such as logins, page views, searches and edits, and each report becomes an event. tirreno files the details of every event into separate tables: who did it, from which IP address, on which page, on which device and in which session.
+This schema holds everything [tirreno](https://www.tirreno.com/) learns from the events of entities (or users) in your application. Your app reports what each entity does, such as logins, page views, searches and edits, and each report becomes an event. tirreno files the details of every event into separate tables: who did it, from which IP address, on which page, on which device and in which session.
 
 Details that many entities share, such as an IP address, a page or a browser, are stored only once and reused, each with counters showing how often it is seen and by how many accounts. Details that belong to one entity, such as its devices, email addresses and phone numbers, are stored per account. From all this, tirreno calculates a risk score for each account.
 
@@ -369,6 +369,28 @@ Columns:
 ---
 
 This document covers the event record and the 13 tables its columns point to. Five more tables are only named in the column descriptions and not described here: `dshb_operators`, `event_isp`, `countries`, `event_ua_parsed` and `event_domain`.
+
+---
+## Resources
+
+| Resource | URL |
+|----------|-----|
+| Live Demo | [play.tirreno.com](https://play.tirreno.com) (admin/tirreno) |
+| Resource center | [tirreno.com/bat](https://www.tirreno.com/bat/) |
+| Developers Guide | [github.com/tirrenotechnologies/DEVELOPMENT.md](https://github.com/tirrenotechnologies/DEVELOPMENT.md) |
+| Administrator guide | [github.com/tirrenotechnologies/ADMIN.md](https://github.com/tirrenotechnologies/ADMIN.md) |
+| Operator guide | [github.com/tirrenotechnologies/OPERATOR.md](https://github.com/tirrenotechnologies/OPERATOR.md) |
+| Event DB schema | [github.com/tirrenotechnologies/EVENT_SCHEMA.md](https://github.com/tirrenotechnologies/EVENT_SCHEMA.md) |
+| API reference | [github.com/tirrenotechnologies/API.md](https://github.com/tirrenotechnologies/API.md) |
+| GitHub | [github.com/tirrenotechnologies/tirreno](https://github.com/tirrenotechnologies/tirreno) |
+| GitLab Mirror | [gitlab.com/tirreno/tirreno](https://gitlab.com/tirreno/tirreno) |
+| Docker Hub | [hub.docker.com/r/tirreno/tirreno](https://hub.docker.com/r/tirreno/tirreno) |
+| Packagist | [packagist.org/packages/tirreno/tirreno](https://packagist.org/packages/tirreno/tirreno) |
+| PHP Tracker | [github.com/tirrenotechnologies/tirreno-php-tracker](https://github.com/tirrenotechnologies/tirreno-php-tracker) |
+| Python Tracker | [github.com/tirrenotechnologies/tirreno-python-tracker](https://github.com/tirrenotechnologies/tirreno-python-tracker) |
+| Node.js Tracker | [github.com/tirrenotechnologies/tirreno-nodejs-tracker](https://github.com/tirrenotechnologies/tirreno-nodejs-tracker) |
+| WordPress Tracker | [github.com/tirrenotechnologies/tirreno-wordpress-tracker](https://github.com/tirrenotechnologies/tirreno-wordpress-tracker) |
+| Community Chat | [chat.tirreno.com](https://chat.tirreno.com) |
 
 ---
 
