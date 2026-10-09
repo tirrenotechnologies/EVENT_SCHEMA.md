@@ -1,4 +1,4 @@
-# tirreno monitored data schema
+# tirreno event schema
 
 This schema holds everything tirreno learns from the events of entities (or users) in your application. Your app reports what each entity does, such as logins, page views, searches and edits, and each report becomes an event. tirreno files the details of every event into separate tables: who did it, from which IP address, on which page, on which device and in which session.
 
