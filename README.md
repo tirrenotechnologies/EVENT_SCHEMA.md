@@ -144,7 +144,7 @@ Columns:
 - `domains_count` (json, optional): JSON array of domains hosted on the address (from enrichment, shown as "Domains hosting").
 - `fraud_detected` (boolean): Whether the address was already blacklisted when the event arrived.
 - `hash` (text, optional): SHA-256 of the address.
-- `alert_list` (boolean, optional): Whether the address is on the global alert list (from enrichment).
+- `alert_list` (boolean, optional): Not in use.
 - `starlink` (boolean, optional): Whether the address belongs to the Starlink network (from enrichment).
 
 ### e) `url` (bigint) -> Pages [table: `event_url`]
@@ -263,7 +263,7 @@ Columns:
 - `domain` (bigint, optional): Domain of the address. Points to Email domains [table: `event_domain`].
 - `fraud_detected` (boolean): Whether the address was already blacklisted when the event arrived.
 - `hash` (text, optional): SHA-256 of the address.
-- `alert_list` (boolean, optional): Whether the address is on the global alert list (from enrichment).
+- `alert_list` (boolean, optional): Not in use.
 - `data_breaches` (integer, optional): Number of data breaches involving the address (from enrichment).
 - `earliest_breach` (text, optional): Date of the earliest known breach (from enrichment).
 
@@ -360,10 +360,10 @@ Columns:
 - Counters (the `total_*` columns and the `shared` counts) are recalculated after events arrive, so they can lag slightly behind the newest events.
 - Details marked "from enrichment" are only filled in when an enrichment API token is set; otherwise they stay empty.
 - `lastseen` always holds the latest activity and never moves backwards. `updated` says when a row's counters were last recalculated.
-- `checked` means enrichment has been done for the value, `hash` is a SHA-256 fingerprint of it, `fraud_detected` means it was already blacklisted when it arrived, and `alert_list` means it is on tirreno's global alert list.
+- `checked` means enrichment has been done for the value, `hash` is a SHA-256 fingerprint of it, `fraud_detected` means it was already blacklisted when it arrived.
 - Scores go from 99 (looks clean) down to 0. After a fresh install every account scores 99, because every rule's weight starts at 0 until you set weights in the console.
 - To delete a user, use tirreno's deletion queue: it removes the account together with its events. Deleting an account also removes its devices, email addresses, phone numbers, sessions, scores, review-queue entry and field change history.
-- "Not checked by the database" means a column holds another table's ID but the database doesn't verify it.
+- "Not checked by the database" means a column holds another table's ID, but there is no foreign key, so the database doesn't verify that the referenced row exists.
 - Columns marked optional can be empty. Columns the database fills in by itself, such as IDs and creation times, are not marked.
 
 ---
